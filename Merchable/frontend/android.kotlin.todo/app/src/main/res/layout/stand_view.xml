@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/stand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/blue_merchable"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/stand_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/stand_name"
+        android:layout_marginLeft="10dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/stand_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stand_hours"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/location_text"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/stand_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stand_image"
+        android:layout_marginStart="3dp"
+        android:layout_toEndOf="@id/hours_text"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/hours_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stand_image"
+        android:layout_marginStart="10dp"
+        android:text="@string/view_stand_hours"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stand_hours"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/view_stand_location"
+        android:textSize="18sp" />
+</RelativeLayout>

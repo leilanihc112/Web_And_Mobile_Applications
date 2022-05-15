@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>
+      Merchable
+    </title>
+    <style>.head1 {font-size: 40px; color: #59bfff; font-weight: bold; margin-top:             20px; font-family: Helvetica;}margin {0 auto; background-position: center; background-size: contain;}.menu {position: sticky; top: 0; background-color: #59bfff; padding:10px             0px 10px 0px; color: white; margin-top: 20px; overflow: hidden;}.menu a {float: left; color: white; text-align: center; padding: 14px 16px;                      text-decoration: none; font-size: 20px; font-family: Helvetica;}.body_sec {margin-left: 20px; font-family: Helvetica; color: white;}.menu-log {right: auto; float: right;}a:link {color: #59bfff;}a:visited {color: #e1affd;}.management_buttons {outline: none; background-color: transparent; cursor:             pointer; color: #59bfff; background-repeat: no-repeat; border: none; text-decoration:            underline; display:inline-block; font-size: 16; font-family:Helvetica;}img {width: 250px; height: 250px; max-width: 250px; max-height: 250px;             object-fit: cover;}hr {display: inline-block; width: 100%;}body {background-color: #252526;}div#StandImage {overflow: hidden;}div#StandImage1 {overflow: hidden;}div#StandImage2 {overflow: hidden;}div#StandImage3 {overflow: hidden;}</style>
+  </head>
+  <body>
+    <header>
+      <div class="head1">
+        Merchable
+      </div>
+    </header>
+    <div class="menu">
+      <a href="{{ url_for('management_main', post_index=0, stand_first_index=0,         stand_second_index=3) }}" style="color: white;">
+        Manage
+      </a>
+      <a href="/create_stand" style="color: white;">
+        Create Stand
+      </a>
+      <a href="{{ url_for('view_all_stands', stand_first_index=0,         stand_second_index=3) }}" style="color: white;">
+        View All Stands
+      </a>
+      <a href="/search" style="color: white;">
+        Search Posts
+      </a>
+      <div class="menu-log">
+        <button id="sign-out" style="outline: none; background-color:             transparent; cursor: pointer; color: white; background-repeat: no-repeat; border:             none; display:inline-block; font-size: 24; font-family:Helvetica; padding: 12px 10px;">
+          LOGOUT
+        </button>
+      </div>
+    </div>
+    <div class="body_sec">
+      <section id="Content">
+        <h3>
+          Create Post
+        </h3>
+        <hr />
+        <div class="content" style="max-width: 750px; margin: auto;                         background: #4f4f4f; padding: 20px; justify-content: center;                         align-items: center; position:relative; top:50px; border-radius: 25px;">
+          <form method="POST" action="/add_post/" enctype="multipart/form-data">
+            <div>
+              <div>
+                <p id="PostInformation" style="width:50%; font-size: 14;">
+                  Fields marked with an * are required
+                  <input name="uuid_form" type="hidden" value="{{ uuid_form }}" readonly="readonly" style="width:50%; height:30px;" />
+                </p>
+                <p id="StandNameLabel" style="width:50%; font-size: 18;">
+                  Stand Name
+                  <input name="StandName" type="text" value="{{ stand_name }}" readonly="readonly" style="width:50%; height:30px;" />
+                  <input name="stand_id" type="hidden" value="{{ stand_id }}" />
+                </p>
+                <p id="PostTagsLabel" style="width:75%; font-size: 18;">
+                  Post Tags
+                  <input name="PostTags" type="text" placeholder="Add Post Tags" style="width:60%; height:30px;" />
+                </p>
+              </div>
+            </div>
+            <div>
+              <p id="PostTitleLabel" style="font-size: 18; width:50%;">
+                *Post Title
+                <input name="PostTitle" type="text" placeholder="Add Post Title" required="true" style="width:125%; height:30px;" />
+              </p>
+            </div>
+            <div>
+              <p id="PostDescriptionLabel" style="width:25%, font-size: 18, height:50px;">
+                *Post Description
+                <textarea name="post_description" rows="6" cols="100" required="true" style="min-height: 80px;max-height: 130px;min-height: 80px;max-width:90%;min-width:25%;"></textarea>
+              </p>
+              <p id="PostImagesLabel" style="font-size: 18; width:50%;">
+                Post Images
+                <input type="file" id="files" name="post_images" accept="image/*" multiple="true" />
+              </p>
+            </div>
+            <div>
+              <input type="submit" style="float: right;text-align: right;" />
+              <input type="button" value="Cancel" onclick="cancel_click()" style="float: right;text-align: right; margin-right: 10px;" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css" />
+  <script type="module" src="{{ url_for('static', filename='login.js') }}"></script>
+  <script>function cancel_click() {window.location.href  = '/view/stand/{{ stand_id }}/0/5'}</script>
+</html>

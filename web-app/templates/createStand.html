@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <title>
+      Merchable
+    </title>
+    <style>.head1 {font-size: 40px; color: #59bfff; font-weight: bold; margin-top:             20px; font-family: Helvetica;}margin {0 auto; background-position: center; background-size: contain;}.menu {position: sticky; top: 0; background-color: #59bfff; padding:10px             0px 10px 0px; color: white; margin-top: 20px; overflow: hidden;}.menu a {float: left; color: white; text-align: center; padding: 14px 16px;                      text-decoration: none; font-size: 20px; font-family: Helvetica;}.body_sec {margin-left: 20px; font-family: Helvetica; color: white;}.menu-log {right: auto; float: right;}a:link {color: #59bfff;}a:visited {color: #e1affd;}.management_buttons {outline: none; background-color: transparent; cursor:             pointer; color: #59bfff; background-repeat: no-repeat; border: none; text-decoration:            underline; display:inline-block; font-size: 16; font-family:Helvetica;}img {width: 250px; height: 250px; max-width: 250px; max-height: 250px;             object-fit: cover;}hr {display: inline-block; width: 100%;}body {background-color: #252526;}div#StandImage {overflow: hidden;}div#StandImage1 {overflow: hidden;}div#StandImage2 {overflow: hidden;}div#StandImage3 {overflow: hidden;}</style>
+  </head>
+  <body>
+    <header>
+      <div class="head1">
+        Merchable
+      </div>
+    </header>
+    <div class="menu">
+      <a href="{{ url_for('management_main', post_index=0, stand_first_index=0,         stand_second_index=3) }}" style="color: white;">
+        Manage
+      </a>
+      <a href="/create_stand" style="color: white;">
+        Create Stand
+      </a>
+      <a href="{{ url_for('view_all_stands', stand_first_index=0,         stand_second_index=3) }}" style="color: white;">
+        View All Stands
+      </a>
+      <a href="/search" style="color: white;">
+        Search Posts
+      </a>
+      <div class="menu-log">
+        <button id="sign-out" style="outline: none; background-color:             transparent; cursor: pointer; color: white; background-repeat: no-repeat; border:             none; display:inline-block; font-size: 24; font-family:Helvetica; padding: 12px 10px;">
+          LOGOUT
+        </button>
+      </div>
+    </div>
+    <div class="body_sec">
+      <section id="Content">
+        <h3>
+          Create Stand
+        </h3>
+        <hr />
+        <div class="content" style="max-width: 750px; margin: auto;                     background: #4f4f4f; padding: 20px; justify-content: center;                     align-items: center; position:relative; top:50px; border-radius: 25px;">
+          <form enctype="multipart/form-data" method="post">
+            <div>
+              <p id="Information" style="font-size: 14;">
+                Fields marked with an * are required
+              </p>
+              <label style="color:red; display:                             {{ hidden_value7 }}">
+                Stand with this information already exists. Please enter                                 different information.
+              </label>
+              <p id="StandNameLabel" style="font-size: 18;">
+                *Stand Name
+              </p>
+              <div>
+                {% if show_val %}
+                <input name="StandName" type="text" placeholder="Insert a stand name" style="width:100%;                                 height:30px;" value="{{ request.form['StandName'] }}" />
+                {% else %}
+                <input name="StandName" type="text" placeholder="Insert a stand name" style="width:100%;                                 height:30px;" />
+                {% endif %}
+                <label style="color:red; display:                                 {{ hidden_value5 }}">
+                  Input a name for the stand
+                </label>
+              </div>
+            </div>
+            <div>
+              <p id="Location" style="font-size: 18;">
+                *Location
+              </p>
+              <div>
+                {% if show_val %}
+                <input name="Latitude" type="text" placeholder="Latitude" style="width:50%; height:30px;" value="{{ request.form['Latitude'] }}" />
+                {% else %}
+                <input name="Latitude" type="text" placeholder="Latitude" style="width:50%; height:30px;" />
+                {% endif %}
+                <label style="color:red; display:                                 {{ hidden_value1 }}">
+                  Value must be between -90 and 90
+                </label>
+                {% if show_val %}
+                <input name="Longitude" type="text" placeholder="Longitude" style="width:50%; height:30px;" value="{{ request.form['Longitude'] }}" />
+                {% else %}
+                <input name="Longitude" type="text" placeholder="Longitude" style="width:50%; height:30px;" />
+                {% endif %}
+                <label style="color:red; display:                                 {{ hidden_value2 }}">
+                  Value must be between -180 and 180
+                </label>
+              </div>
+            </div>
+            <div>
+              <p id="InventoryLabel" style="font-size: 18;">
+                Inventory (separate items by comma)
+              </p>
+              {% if show_val %}
+              <input name="Inventory" type="text" placeholder="Insert item" style="width:100%;                             height:30px;" value="{{ request.form['Inventory'] }}" />
+              {% else %}
+              <input name="Inventory" type="text" placeholder="Insert item" style="width:100%;                             height:30px;" />
+              {% endif %}
+            </div>
+            <div>
+              <p id="Opens" style="font-size: 18;">
+                *Opens
+              </p>
+              {% if show_val %}
+              <input name="OpenDate" type="datetime-local" style="width:50%; height:30px;" value="{{                             request.form['OpenDate'] }}" />
+              {% else %}
+              <input name="OpenDate" type="datetime-local" style="width:50%; height:30px;" />
+              {% endif %}
+              <label style="color:red; display:                             {{ hidden_value3 }}">
+                Input Date
+              </label>
+            </div>
+            <div>
+              <p id="Closes" style="font-size: 18;">
+                *Closes
+              </p>
+              {% if show_val %}
+              <input name="CloseDate" type="datetime-local" style="width:50%; height:30px;" value="{{                             request.form['CloseDate'] }}" />
+              {% else %}
+              <input name="CloseDate" type="datetime-local" style="width:50%; height:30px;" />
+              {% endif %}
+              <label style="color:red; display:                             {{ hidden_value4 }}">
+                Input Date
+              </label>
+              <label style="color:red; display:                             {{ hidden_value6 }}">
+                Open must be before close
+              </label>
+            </div>
+            <div>
+              <p id="Image" style="font-size: 18;">
+                Image
+              </p>
+              <input type="file" id="files" name="img" accept="image/*" multiple="false" />
+              <input type="submit" value="Done" style="float: right;text-align: right;" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css" />
+  <script type="module" src="{{ url_for('static', filename='login.js') }}"></script>
+  <script>if ('{{ alert }}' == 'True') {                 window.alert('Stand added successfully');                 window.location.href('/create_stand/');                 }</script>
+</html>

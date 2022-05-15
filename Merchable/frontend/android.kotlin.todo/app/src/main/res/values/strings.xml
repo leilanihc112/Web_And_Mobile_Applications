@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Merchable</string>
+    <string name="title_logout">Log Out</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
+
+    <string name="view_stand_name">Stand Name</string>
+    <string name="view_stand_user">Stand Creator</string>
+    <string name="view_stand_date_time">00-00-0000 00:00 - 00-00-0000 00:00</string>
+    <string name="view_stand_location_coordinates">-90, 90</string>
+    <string name="view_stand_inventory_list_item">Item</string>
+    <string name="view_stand_post_title">Post Title</string>
+    <string name="view_stand_post_date_time">00-00-0000 00:00</string>
+    <string name="view_stand_post_user">Post Creator</string>
+    <string name="view_stand_post_text">Post Text</string>
+    <string name="view_stand_created_by">Created By:</string>
+    <string name="view_stand_hours">Hours:</string>
+    <string name="view_stand_location">Location:</string>
+    <string name="create_post">Create Post</string>
+    <string name="view_stand_inventory_list">Inventory List</string>
+    <string name="view_stand_posts">Posts</string>
+
+    <string name="view_stand">View Stand</string>
+    <string name="create_stand">Create stand</string>
+    <string name="view_stands">View Stands</string>
+    <string name="search_posts">Search Posts</string>
+    <string name="view_nearby_stands">View Nearby Stands</string>
+
+    <string name="create_post_post_title">Post Title</string>
+    <string name="create_post_post_date_time">00-00-0000 00:00</string>
+    <string name="create_post_post_user">Post Creator</string>
+    <string name="create_post_post_text">Post Text</string>
+    <string name="create_post_post_tag">tag1, tag2</string>
+    <string name="create_post_required">Required</string>
+    <string name="create_post_post_tags">Post Tags</string>
+    <string name="create_post_post_images">Post Images</string>
+
+    <string name="create_stand_stand_name">*Stand Name</string>
+    <string name="create_stand_location">*Location</string>
+    <string name="create_stand_longitude">Longitude</string>
+    <string name="create_stand_latitude">Latitude</string>
+    <string name="create_stand_inventory">*Inventory (separate items by comma)</string>
+    <string name="create_stand_inventory_no_star">Inventory (separate items by comma)</string>
+    <string name="create_stand_opens">*Opens</string>
+    <string name="create_stand_closes">*Closes</string>
+    <string name="create_stand_opens_format">MM/DD/YYYY HH:MM</string>
+    <string name="create_stand_closes_format">MM/DD/YYYY HH:MM</string>
+    <string name="create_stand_image">Image</string>
+
+    <string name="search_posts_submit">Submit</string>
+
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="stand_location">Stand Location</string>
+    <string name="take_photo">Take photo</string>
+
+    <string name="start_capture">Start Capture</string>
+    <string name="stop_capture">Stop Capture</string>
+    <string name="upload_photo">Upload</string>
+</resources>

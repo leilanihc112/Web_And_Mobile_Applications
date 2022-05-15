@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.mongodb.app.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_viewAllStandsFragment3"
+            app:destination="@id/viewAllStandsFragment3" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_viewNearbyStandsFragment"
+            app:destination="@id/viewNearbyStandsFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_createStandFragment"
+            app:destination="@id/createStandFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.mongodb.app.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <argument
+            android:name="tag"
+            app:argType="string"
+            android:defaultValue="tag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.mongodb.app.HomeFragment"
+        android:label="@string/title_logout"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/viewAllStandsFragment3"
+        android:name="com.mongodb.app.ViewAllStandsFragment"
+        android:label="View Stands"
+        tools:layout="@layout/fragment_view_all_stands" >
+        <action
+            android:id="@+id/action_viewAllStandsFragment3_to_viewSingleStandFragment3"
+            app:destination="@id/viewSingleStandFragment3" />
+        <argument
+            android:name="myArg"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_viewNearbyStandsFragment_to_standLocationMapFragment"
+            app:destination="@id/standLocationMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewSingleStandFragment3"
+        android:name="com.mongodb.app.ViewSingleStandFragment"
+        android:label="View Stand"
+        tools:layout="@layout/fragment_view_single_stand" >
+        <argument
+            android:name="standId"
+            app:argType="string"
+            android:defaultValue="Stand 1" />
+        <action
+            android:id="@+id/action_viewSingleStandFragment3_to_CreatePostFragment3"
+            app:destination="@id/CreatePostFragment3" />
+        <action
+            android:id="@+id/action_viewSingleStandFragment3_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_viewSingleStandFragment3_to_standLocationMapFragment"
+            app:destination="@id/standLocationMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreatePostFragment3"
+        android:name="com.mongodb.app.CreatePostFragment"
+        android:label="Create Post"
+        tools:layout="@layout/fragment_create_post" >
+        <argument
+            android:name="standId"
+            app:argType="string"
+            android:defaultValue="Stand 1" />
+        <action
+            android:id="@+id/action_CreatePost_to_ViewSingleStandFragment"
+            app:destination="@id/viewSingleStandFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewNearbyStandsFragment"
+        android:name="com.mongodb.app.ViewNearbyStandsFragment"
+        android:label="@string/view_nearby_stands"
+        tools:layout="@layout/fragment_view_nearby_stands" >
+        <argument
+            android:name="standId"
+            app:argType="string"
+            android:defaultValue="Stand 1" />
+        <action
+            android:id="@+id/action_viewNearbyStandsFragment_to_viewSingleStandFragment"
+            app:destination="@id/viewSingleStandFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/standLocationMapFragment"
+        android:name="com.mongodb.app.StandLocationMapFragment"
+        android:label="@string/stand_location"
+        tools:layout="@layout/fragment_stand_location_map" >
+        <argument
+            android:name="standName"
+            app:argType="string"
+            android:defaultValue="Stand name" />
+        <argument
+            android:name="latLngString"
+            app:argType="string"
+            android:defaultValue="(-34.0, 151.0)" />
+    </fragment>
+    <fragment
+        android:id="@+id/createStandFragment"
+        android:name="com.mongodb.app.CreateStandFragment"
+        android:label="Create Stand" />
+
+</navigation>

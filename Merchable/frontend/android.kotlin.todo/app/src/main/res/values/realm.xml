@@ -1,0 +1,8 @@
+<resources>
+    <string name="realm_app_id">merchable-mhrpo</string>
+    <string name="realm_app_url">https://realm.mongodb.com/groups/6206645160b6866a96c3b906/apps/62625b655d7d3646f46fc19e</string>
+    <string name="realm_base_url">https://realm.mongodb.com</string>
+    <string name="realm_data_source_name">mongodb-atlas</string>
+</resources>
+
+
