@@ -1,6 +1,6 @@
 # Team6-Spring2022
 
-NOTE: THIS WILL NOT RUN LOCALLY. API KEYS, PRIVATE KEYS, etc. THAT ARE NECESSARY HAVE BEEN REMOVED FROM THE REPOSITORY.
+NOTE: This will not run locally. API keys, private keys, etc. that are necessary to run locally have been removed.
 
 This is a crowd-sourcing application in which users can report whether an item at a merch stand at an event is
 available or not. This is intended to help fans know whether it is worth it to stand in long merch lines at an
